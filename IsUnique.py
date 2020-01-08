@@ -1,10 +1,12 @@
 import sys
 def isUnique(chain):
-    for i in range(len(chain)):
-        for j in range(i,len(chain)):
-            if (i != j and chain[i] == chain[j]):
-                print("values {}, {}".format(i,j))
-                return False
+    chars = [False]*256
+       
+    for s in chain:
+       if chars[ord(s)] == True:
+           return False
+       else:
+           chars[ord(s)] = True         
     return True              
 
 if __name__ == "__main__":
